@@ -23,6 +23,7 @@ while links_limit < 1:
 file_dir = os.path.dirname(os.path.realpath(__file__))
 driver_path = os.path.join(file_dir, 'geckodriver.exe')
 driver = webdriver.Firefox(executable_path=driver_path)
+driver.set_page_load_timeout(5)
 
 driver.get('https://reddit.com/r/' + subreddit)
 
