@@ -25,7 +25,12 @@ class RedditPage:
         self.driver = driver
 
     def get_links(self):
-        return self.driver.find_elements_by_css_selector('a.title')
+        divs = self.driver.find_elements_by_css_selector('div.thing')
+        items = []
+        for div in divs:
+            found_links = div.find_elements_by_css_selector('a.title')
+            items.extend(found_links)
+        return items
 
     def navigate_to_next_page(self):
         next_button = self.driver.find_element_by_css_selector('span.next-button a')
