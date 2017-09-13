@@ -58,7 +58,8 @@ while links_considered < links_limit:
     else:
         # Empty deque
         page.navigate_to_next_page()
-        links.extend(page.get_links())
+        new_links = page.get_links()
+        links.extend(new_links)
 
 web_driver.close()
 
