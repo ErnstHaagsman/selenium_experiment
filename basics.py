@@ -25,7 +25,7 @@ class RedditPage:
         self.driver = driver
 
     def get_links(self):
-        divs = self.driver.find_elements_by_css_selector('div.thing')
+        divs = self.driver.find_elements_by_css_selector('div.thing')  # find divs with class 'thing'
         items = []
         for div in divs:
             found_links = div.find_elements_by_css_selector('a.title')
