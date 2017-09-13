@@ -48,14 +48,14 @@ links.extend(page.get_links())
 links_considered = 0
 
 while links_considered < links_limit:
-    try:
+    if links:
         link = links.pop()
 
         if keyword in link.text.lower():
             links_found += 1
         links_considered += 1
 
-    except IndexError:
+    else:
         # Empty deque
         page.navigate_to_next_page()
         links.extend(page.get_links())
