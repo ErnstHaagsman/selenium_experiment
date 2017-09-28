@@ -28,7 +28,7 @@ class RedditPage:
         divs = self.driver.find_elements_by_css_selector('div.thing')  # find divs with class 'thing'
         items = []
         for div in divs:
-            found_links = div.find_elements_by_css_selector('a.title')
+            found_links = div.find_elements_by_css_selector('a.heading')
             items.extend(found_links)
         return items
 
