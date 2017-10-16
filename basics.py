@@ -40,7 +40,7 @@ class RedditPage:
 file_dir = os.path.dirname(os.path.realpath(__file__))
 driver_path = os.path.join(file_dir, 'chromedriver.exe')
 web_driver = webdriver.Chrome(executable_path=driver_path)
-web_driver.set_page_load_timeout(10)
+web_driver.set_page_load_timeout(60)
 
 web_driver.get('https://reddit.com/r/' + subreddit)
 
