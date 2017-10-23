@@ -47,7 +47,7 @@ web_driver.get('https://reddit.com/r/' + subreddit)
 page = RedditPage(web_driver)
 
 links_found = 0
-links = deque()
+links = []
 
 links.extend(page.get_links())
 links_considered = 0
